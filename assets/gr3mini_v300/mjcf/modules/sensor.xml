@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<mujoco>
+    <sensor>
+        <framequat name='orientation' objtype='site' objname='imu_sensor'/>
+        <gyro name='imu_ang_vel' site='imu_sensor' cutoff='34.9'/>
+        <velocimeter name='imu_lin_vel' site='imu_sensor' cutoff='157'/>
+        <!-- Backward-compat aliases kept for existing code using robot/angular-velocity / robot/linear-acceleration -->
+        <gyro name='angular-velocity' site='imu_sensor' cutoff='34.9'/>
+        <accelerometer name='linear-acceleration' site='imu_sensor' cutoff='157'/>
+        <!-- Whole-body angular momentum about base_link's CoM subtree — used by
+             common_mdp.whole_body_angular_momentum_penalty to discourage
+             flailing/twisted locomotion posture (root-orientation/root-angular-
+             velocity penalties alone can't see arm-swing-driven momentum).
+             mjlab auto-exposes this as "robot/root_angmom", no scene-config
+             wiring needed. -->
+        <subtreeangmom name='root_angmom' body='base_link'/>
+    </sensor>
+</mujoco>

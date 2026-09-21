@@ -1,0 +1,68 @@
+<mujoco model="GR3Mini-v3.0.0">
+    <compiler angle="radian" meshdir="/home/jason/Github/JasonForkRepo/UMR/assets/gr3mini_v300/meshes/visual" autolimits="true"/>
+
+    <option timestep="0.002" gravity="0 0 -9.81"/>
+
+    <include file="modules/defaults.xml"/>
+    <include file="modules/assets.xml"/>
+    <include file="modules/visual.xml"/>
+
+    <worldbody>
+<!--        <include file="modules/worldbody_scene.xml"/>-->
+        <include file="modules/body.xml"/>
+    </worldbody>
+
+    <include file="modules/actuator.xml"/>
+    <include file="modules/sensor.xml"/>
+    <include file="modules/contact.xml"/>
+
+    <statistic center="0 0 0.65" extent="2.5"/>
+
+    <!--
+        qpos layout (32 = 7 freejoint + 25 joints, depth-first body tree order):
+          [0-6]  base_link freejoint: x y z qw qx qy qz
+          [7]    left_hip_pitch_joint
+          [8]    left_hip_roll_joint
+          [9]    left_hip_yaw_joint
+          [10]   left_knee_pitch_joint
+          [11]   left_ankle_pitch_joint
+          [12]   left_ankle_roll_joint
+          [13]   right_hip_pitch_joint
+          [14]   right_hip_roll_joint
+          [15]   right_hip_yaw_joint
+          [16]   right_knee_pitch_joint
+          [17]   right_ankle_pitch_joint
+          [18]   right_ankle_roll_joint
+          [19]   waist_yaw_joint
+          [20]   head_yaw_joint
+          [21]   head_pitch_joint
+          [22]   left_shoulder_pitch_joint
+          [23]   left_shoulder_roll_joint
+          [24]   left_shoulder_yaw_joint
+          [25]   left_elbow_pitch_joint
+          [26]   left_wrist_yaw_joint
+          [27]   right_shoulder_pitch_joint
+          [28]   right_shoulder_roll_joint
+          [29]   right_shoulder_yaw_joint
+          [30]   right_elbow_pitch_joint
+          [31]   right_wrist_yaw_joint
+
+        v300 notes (source: supermodels gr3miniv3_0_0.urdf):
+          - 运动学/质量/惯量与 v200-v202 不同，由 build_mjcf.py 从 v300 URDF 生成
+          - hip_roll 升级为 PJ3-97 (140 Nm)；hip_yaw 为 PJ3-75 (42 Nm)
+          - 执行器限值: PJ3-97 140 Nm, PJ3-75 42 Nm, PJ3-60 28.5 Nm, HJ2-52 11 Nm
+          - 脚踝并联关节 joint armature: pitch 0.0127 / roll 0.00624
+          - 碰撞体与 URDF 一致（62 个 primitive，含双脚各 18 个小球包络）
+    -->
+    <keyframe>
+        <key name="home"
+             qpos="0 0 0.682 1 0 0 0
+                   0 0 0 0 0 0
+                   0 0 0 0 0 0
+                   0
+                   0 0
+                   0 0 0 0 0
+                   0 0 0 0 0"
+        />
+    </keyframe>
+</mujoco>

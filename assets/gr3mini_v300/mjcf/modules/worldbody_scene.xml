@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<mujoco>
+    <geom name="floor" size="0 0 0.01" type="plane" material="grid"
+          condim="3" friction="1.0" contype="1" conaffinity="0" priority="1"/>
+    <light name="sun" directional="true" pos="0 0 5" dir="0 0 -1"
+           diffuse="0.8 0.8 0.8" specular="0.2 0.2 0.2" castshadow="true"/>
+    <light name="fill" directional="true" pos="-3 3 4" dir="1 -1 -1"
+           diffuse="0.3 0.3 0.3" specular="0 0 0" castshadow="false"/>
+</mujoco>

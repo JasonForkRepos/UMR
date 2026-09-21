@@ -1,0 +1,20 @@
+<mujoco model="GR3Mini-v3.0.0-scene">
+    <compiler angle="radian" meshdir="../meshes/visual" autolimits="true"/>
+
+    <option timestep="0.002" gravity="0 0 -9.81"/>
+
+    <include file="modules/defaults.xml"/>
+    <include file="modules/assets.xml"/>
+    <include file="modules/visual.xml"/>
+
+    <worldbody>
+        <include file="modules/worldbody_scene.xml"/>
+        <include file="modules/body.xml"/>
+    </worldbody>
+
+    <include file="modules/actuator.xml"/>
+    <include file="modules/sensor.xml"/>
+    <include file="modules/contact.xml"/>
+
+    <statistic center="0 0 0.65" extent="2.5"/>
+</mujoco>

@@ -1,0 +1,70 @@
+{
+  "robot": {
+    "name": "gr3mini_v300",
+    "xml": "../assets/gr3mini_v300/gr3mini_v300_flat.xml",
+    "point_cloud_center": "body:waist_yaw_link",
+    "tpose_qpos": {
+      "left_shoulder_roll_joint": 1.57079632679,
+      "right_shoulder_roll_joint": -1.57079632679,
+      "left_elbow_pitch_joint": 0.0,
+      "right_elbow_pitch_joint": 0.0,
+      "left_wrist_yaw_joint": 0.0,
+      "right_wrist_yaw_joint": 0.0,
+      "left_shoulder_yaw_joint": 0.0,
+      "right_shoulder_yaw_joint": 0.0,
+      "left_shoulder_pitch_joint": 0.0,
+      "right_shoulder_pitch_joint": 0.0,
+      "waist_yaw_joint": 0.0,
+      "head_yaw_joint": 0.0,
+      "head_pitch_joint": 0.0,
+      "left_hip_pitch_joint": 0.0,
+      "left_hip_roll_joint": 0.0,
+      "left_hip_yaw_joint": 0.0,
+      "left_knee_pitch_joint": 0.0,
+      "left_ankle_pitch_joint": 0.0,
+      "left_ankle_roll_joint": 0.0,
+      "right_hip_pitch_joint": 0.0,
+      "right_hip_roll_joint": 0.0,
+      "right_hip_yaw_joint": 0.0,
+      "right_knee_pitch_joint": 0.0,
+      "right_ankle_pitch_joint": 0.0,
+      "right_ankle_roll_joint": 0.0
+    },
+    "joint_limits": {
+      "left_knee_pitch_joint": [0.0, "inf"],
+      "right_knee_pitch_joint": [0.0, "inf"],
+      "left_elbow_pitch_joint": ["-inf", 0.0],
+      "right_elbow_pitch_joint": ["-inf", 0.0]
+    }
+  },
+  "correspondence": {
+    "dataset": {
+      "num_points": 16384
+    }
+  },
+  "retarget": {
+    "source_ground_align": "global_foot_joint"
+  },
+  "solver": {
+    "iters": 10,
+    "ground_contact_anchor_cost": 15.0,
+    "ground_penetration_hard_constraint_mode": "surface_slots_all",
+    "ground_penetration_max_points": 1024,
+    "ground_penetration_threshold": 0.08,
+    "trajectory_filter_root_translation": false,
+    "body_segment": {
+      "cost_config": {
+        "leftFoot": {
+          "sample_slots": 60,
+          "point_cost": 20.0,
+          "normal_cost": 5.0
+        },
+        "rightFoot": {
+          "sample_slots": 60,
+          "point_cost": 20.0,
+          "normal_cost": 5.0
+        }
+      }
+    }
+  }
+}

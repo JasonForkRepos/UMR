@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<mujoco>
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1=".4 .5 .6" rgb2="0 0 0" width="100" height="100"/>
+        <!-- MuJoCo checker floor (shared by all *_scene.xml files) -->
+        <texture name="grid" type="2d" builtin="checker"
+                 width="512" height="512"
+                 rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"/>
+        <material name="grid" texture="grid" texrepeat="8 8" reflectance="0.2" shininess="0.1"/>
+
+        <mesh name="base_link" content_type="model/stl" file="base_link.stl"/>
+        <mesh name="waist_yaw_link" content_type="model/stl" file="waist_yaw_link.stl"/>
+        <mesh name="torso_link" content_type="model/stl" file="torso_link.stl"/>
+        <mesh name="head_yaw_link" content_type="model/stl" file="head_yaw_link.stl"/>
+        <mesh name="head_pitch_link" content_type="model/stl" file="head_pitch_link.stl"/>
+        <mesh name="camera_head_link" content_type="model/stl" file="camera_head_link.stl"/>
+        <mesh name="imu_link" content_type="model/stl" file="imu_link.stl"/>
+        <mesh name="left_thigh_pitch_link" content_type="model/stl" file="left_thigh_pitch_link.stl"/>
+        <mesh name="left_thigh_roll_link" content_type="model/stl" file="left_thigh_roll_link.stl"/>
+        <mesh name="left_thigh_yaw_link" content_type="model/stl" file="left_thigh_yaw_link.stl"/>
+        <mesh name="left_shank_pitch_link" content_type="model/stl" file="left_shank_pitch_link.stl"/>
+        <mesh name="left_foot_pitch_link" content_type="model/stl" file="left_foot_pitch_link.stl"/>
+        <mesh name="left_foot_roll_link" content_type="model/stl" file="left_foot_roll_link.stl"/>
+        <mesh name="right_thigh_pitch_link" content_type="model/stl" file="right_thigh_pitch_link.stl"/>
+        <mesh name="right_thigh_roll_link" content_type="model/stl" file="right_thigh_roll_link.stl"/>
+        <mesh name="right_thigh_yaw_link" content_type="model/stl" file="right_thigh_yaw_link.stl"/>
+        <mesh name="right_shank_pitch_link" content_type="model/stl" file="right_shank_pitch_link.stl"/>
+        <mesh name="right_foot_pitch_link" content_type="model/stl" file="right_foot_pitch_link.stl"/>
+        <mesh name="right_foot_roll_link" content_type="model/stl" file="right_foot_roll_link.stl"/>
+        <mesh name="left_upper_arm_pitch_link" content_type="model/stl" file="left_upper_arm_pitch_link.stl"/>
+        <mesh name="left_upper_arm_roll_link" content_type="model/stl" file="left_upper_arm_roll_link.stl"/>
+        <mesh name="left_upper_arm_yaw_link" content_type="model/stl" file="left_upper_arm_yaw_link.stl"/>
+        <mesh name="left_lower_arm_pitch_link" content_type="model/stl" file="left_lower_arm_pitch_link.stl"/>
+        <mesh name="left_hand_yaw_link" content_type="model/stl" file="left_hand_yaw_link.stl"/>
+        <mesh name="right_upper_arm_pitch_link" content_type="model/stl" file="right_upper_arm_pitch_link.stl"/>
+        <mesh name="right_upper_arm_roll_link" content_type="model/stl" file="right_upper_arm_roll_link.stl"/>
+        <mesh name="right_upper_arm_yaw_link" content_type="model/stl" file="right_upper_arm_yaw_link.stl"/>
+        <mesh name="right_lower_arm_pitch_link" content_type="model/stl" file="right_lower_arm_pitch_link.stl"/>
+        <mesh name="right_hand_yaw_link" content_type="model/stl" file="right_hand_yaw_link.stl"/>
+    </asset>
+</mujoco>

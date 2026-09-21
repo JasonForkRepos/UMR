@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<mujoco>
+    <default>
+        <default class="GR3Mini">
+
+            <!-- visual -->
+            <default class="visual">
+                <geom group="2" type="mesh" contype="0" conaffinity="0" rgba="1 1 1 1"/>
+            </default>
+
+            <default class="collision">
+                <geom group="3" mass="0" density="0" rgba="0.7 0.7 0.7 0.5"/>
+            </default>
+
+            <!-- attach -->
+            <default class="attach">
+                <site group="4" type="sphere" size="0.005" rgba="1 1 1 1"/>
+            </default>
+
+            <!-- joint classes — effort limits from gr3mini_v300.urdf <limit effort>:
+                 PJ3-97 (hip_pitch/hip_roll/knee_pitch/waist_yaw): 140 Nm, armature 0.029
+                 PJ3-75 (hip_yaw/shoulder_pitch):                 42 Nm,  armature 0.009
+                 PJ3-60 (shoulder_roll/yaw/elbow/ankle):          28.5 Nm, armature 0.003
+                 HJ2-52 (head/wrist):                             11 Nm,   armature 0.049
+                 脚踝并联关节在 body.xml 中单独覆盖 armature
+                 (ankle_pitch 0.0127, ankle_roll 0.00624) -->
+            <default class="joint_140E">
+                <joint armature="0.029" type="hinge" range="0 0" actuatorfrcrange="-140 140"/>
+            </default>
+            <default class="joint_42E">
+                <joint armature="0.009" type="hinge" range="0 0" actuatorfrcrange="-42 42"/>
+            </default>
+            <default class="joint_28E">
+                <joint armature="0.003" type="hinge" range="0 0" actuatorfrcrange="-28.5 28.5"/>
+            </default>
+            <default class="joint_11E">
+                <joint armature="0.049" type="hinge" range="0 0" actuatorfrcrange="-11 11"/>
+            </default>
+
+            <!-- motor classes — ctrlrange matched to v300 URDF effort limits -->
+            <default class="motor_140E">
+                <motor ctrllimited="true" ctrlrange="-140 140"/>
+            </default>
+            <default class="motor_42E">
+                <motor ctrllimited="true" ctrlrange="-42 42"/>
+            </default>
+            <default class="motor_28E">
+                <motor ctrllimited="true" ctrlrange="-28.5 28.5"/>
+            </default>
+            <default class="motor_11E">
+                <motor ctrllimited="true" ctrlrange="-11 11"/>
+            </default>
+
+        </default>
+    </default>
+</mujoco>

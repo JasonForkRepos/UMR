@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<mujoco>
+    <actuator>
+        <!-- left leg — v300: hip_roll 升级为 PJ3-97 (140 Nm)，与 URDF effort 一致 -->
+        <motor class="motor_140E" name="left_hip_pitch"   joint="left_hip_pitch_joint"/>
+        <motor class="motor_140E" name="left_hip_roll"    joint="left_hip_roll_joint"/>
+        <motor class="motor_42E"  name="left_hip_yaw"     joint="left_hip_yaw_joint"/>
+        <motor class="motor_140E" name="left_knee_pitch"  joint="left_knee_pitch_joint"/>
+        <motor class="motor_28E"  name="left_ankle_pitch" joint="left_ankle_pitch_joint"/>
+        <motor class="motor_28E"  name="left_ankle_roll"  joint="left_ankle_roll_joint"/>
+
+        <!-- right leg -->
+        <motor class="motor_140E" name="right_hip_pitch"   joint="right_hip_pitch_joint"/>
+        <motor class="motor_140E" name="right_hip_roll"    joint="right_hip_roll_joint"/>
+        <motor class="motor_42E"  name="right_hip_yaw"     joint="right_hip_yaw_joint"/>
+        <motor class="motor_140E" name="right_knee_pitch"  joint="right_knee_pitch_joint"/>
+        <motor class="motor_28E"  name="right_ankle_pitch" joint="right_ankle_pitch_joint"/>
+        <motor class="motor_28E"  name="right_ankle_roll"  joint="right_ankle_roll_joint"/>
+
+        <!-- waist -->
+        <motor class="motor_140E" name="waist_yaw" joint="waist_yaw_joint"/>
+
+        <!-- head -->
+        <motor class="motor_11E" name="head_yaw"   joint="head_yaw_joint"/>
+        <motor class="motor_11E" name="head_pitch" joint="head_pitch_joint"/>
+
+        <!-- left arm -->
+        <motor class="motor_42E"  name="left_shoulder_pitch" joint="left_shoulder_pitch_joint"/>
+        <motor class="motor_28E"  name="left_shoulder_roll"  joint="left_shoulder_roll_joint"/>
+        <motor class="motor_28E"  name="left_shoulder_yaw"   joint="left_shoulder_yaw_joint"/>
+        <motor class="motor_28E"  name="left_elbow_pitch"    joint="left_elbow_pitch_joint"/>
+        <motor class="motor_11E"  name="left_wrist_yaw"      joint="left_wrist_yaw_joint"/>
+
+        <!-- right arm -->
+        <motor class="motor_42E"  name="right_shoulder_pitch" joint="right_shoulder_pitch_joint"/>
+        <motor class="motor_28E"  name="right_shoulder_roll"  joint="right_shoulder_roll_joint"/>
+        <motor class="motor_28E"  name="right_shoulder_yaw"   joint="right_shoulder_yaw_joint"/>
+        <motor class="motor_28E"  name="right_elbow_pitch"    joint="right_elbow_pitch_joint"/>
+        <motor class="motor_11E"  name="right_wrist_yaw"      joint="right_wrist_yaw_joint"/>
+    </actuator>
+</mujoco>
